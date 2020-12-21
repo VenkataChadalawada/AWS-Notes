@@ -62,6 +62,29 @@ ec2-user
 [ec2-user@ip-172-31-32-92 ~]$ logout
 ```
 
+### EC2 instance connect
+- its another way to connect to the instance with browser
+- In instances you would see `connect` button on the top, click on that -> you would see that it connects in the browser
+- this wont connect if we remove inbound rule to port 22
+
+
+### Intro to security groups
+- security groups are the fundemental of network - allow, inbound, outbound rules
+- filter ip/port with rules
+- they can be attached to multiple instances
+- locked down to a region/vpc combination
+- does live "outside" the EC2 - if traffic is blocked the EC2 instance wont see it.
+- its good to maintain one separate security group for SSH access
+- if your app is not accessible(timeout), then its a security group issue
+- if your app gives a "connection refused" error, then its an application error or its not launched.
+- private IP - two diff private networks(two companies) can have the same IPs.
+- machines connect to www using NAT+internet gateway (a proxy)
+- only a specified range of IPs can be used as private IP
+
+### Elastic IPs
+fixed IP
+
+
 
 
 
